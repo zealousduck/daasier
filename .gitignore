@@ -1,0 +1,4 @@
+# Ignore transient files
+*.pyc
+*.tmp
+*.temp
