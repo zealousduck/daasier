@@ -1,9 +1,6 @@
 import socketserver
 
-# TODO: Actually convert the code string into JSON
-def code_to_json(code):
-    # STUB
-    return '{ "functionName": "foo" }'
+import codeParser
 
 class DaaSierHandler(socketserver.BaseRequestHandler):
 
@@ -20,7 +17,7 @@ class DaaSierHandler(socketserver.BaseRequestHandler):
         elif self.command.upper() == "POST":
             # TODO: Parse the data given in the POST and convert to string for function
             self.data = ''
-            self.request.sendall("{}\n".format(code_to_json(self.data)).encode())
+            self.request.sendall("{}\n".format(codeParser.code_to_json(self.data)).encode())
         else:
             self.request.sendall('Server only supports GET and POST!\n'.encode())
 
