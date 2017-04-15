@@ -1,3 +1,4 @@
 #!/bin/sh
 
-python3 daasierserver.py
+export FLASK_APP=daasierserver.py
+python3 -m flask run
